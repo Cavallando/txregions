@@ -7,5 +7,5 @@ function exec(command) {
 
 stat('lib', function (error, stat) {
   if (error || !stat.isDirectory())
-    exec('npm run build')
+    exec('cd .. && npm run build')
 })
