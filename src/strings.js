@@ -15,5 +15,5 @@ export function line(str, skipTrim) {
 export function foldWhitespace(str) {
     let _str = str;
 
-    return _str.replace(/\s/g, ' ')        // only allow spaces, not tabs, new lines, etc
+    return _str;        // only allow spaces, not tabs, new lines, etc
 }
