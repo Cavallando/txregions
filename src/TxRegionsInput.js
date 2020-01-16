@@ -95,8 +95,8 @@ export default class TxRegionsInput extends Component {
             return this._cleanCacheValue;
         }
         this._cleanCacheSrc = this.state.raw;
-        console.log( this._cleanCacheSrc);
-        return this._cleanCacheValue = foldWhitespace(this._cleanCacheSrc);
+        const { raw = '' } = this._cleanCacheSrc;
+        return this._cleanCacheValue = foldWhitespace(raw);
     }
 
     get raw() {
