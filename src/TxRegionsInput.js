@@ -6,7 +6,6 @@ import { combineValidators } from './presets';
 import { foldWhitespace, KEY_CODES } from './strings';
 import { filteredMap, makeSelectionRange, positiveNumericPropCheck } from './utils';
 import { makeValidators, validatorDefaults, validatorsPropCheck } from './validators';
-import e from 'express';
 
 
 const noOp = function(){};
