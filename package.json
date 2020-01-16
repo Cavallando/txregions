@@ -2,14 +2,6 @@
   "name": "txregions",
   "version": "1.0.3",
   "description": "A React text input component with invalid character highlighting and URL, email, and number presets.",
-  "files": [
-    "*.md",
-    "docs",
-    "es6",
-    "lib",
-    "npm-scripts",
-    "umd"
-  ],
   "main": "lib/index",
   "jsnext:main": "es6/index",
   "homepage": "https://github.com/tiffon/txregions",
@@ -22,7 +14,8 @@
     "build-min": "NODE_ENV=production webpack -p src/index.js umd/TxRegions.min.js",
     "lint": "eslint src demo",
     "start": "cd demo && node server.js && cd -",
-    "test-node": "mocha --compilers js:babel-core/register tests.node.js"
+    "test-node": "mocha --compilers js:babel-core/register tests.node.js",
+    "postinstall": "scripts/postinstall.js"
   },
   "authors": [
     "Joe Farro"
