@@ -1,7 +1,6 @@
-var webpack = require('webpack')
+var webpack = require('webpack');
 
 module.exports = {
-
   output: {
     library: 'txregions',
     libraryTarget: 'umd'
@@ -19,8 +18,13 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
+    rules: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+        }],
+      }
     ]
   },
 
@@ -34,5 +38,5 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ]
+};
 
-}

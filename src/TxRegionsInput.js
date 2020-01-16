@@ -381,7 +381,7 @@ export default class TxRegionsInput extends Component {
             this.setState({
                 hasFocus: true,
                 rawCaretPos: this._findSelectionOffset()
-            }, 0);
+            }, () => {});
         })
     }
 
@@ -517,7 +517,7 @@ export default class TxRegionsInput extends Component {
                     ref={(elm) => this._input = elm}
                     hidden
                     type="text"
-                    onChange={noOp}
+                    // onChange={noOp}
                     name={typeof p.input === 'string' ? p.input : ''}
                     value={clean.trim()}
                     {...inputProps} />
