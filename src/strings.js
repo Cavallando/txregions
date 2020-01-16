@@ -13,6 +13,7 @@ export function line(str, skipTrim) {
 
 
 export function foldWhitespace(str) {
+    console.log(str);
     return str
         .replace(/^\s+/, '')        // no leading spaces
         .replace(/\s/g, ' ')        // only allow spaces, not tabs, new lines, etc
