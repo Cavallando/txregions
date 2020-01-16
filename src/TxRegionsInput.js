@@ -6,6 +6,7 @@ import { combineValidators } from './presets';
 import { foldWhitespace, KEY_CODES } from './strings';
 import { filteredMap, makeSelectionRange, positiveNumericPropCheck } from './utils';
 import { makeValidators, validatorDefaults, validatorsPropCheck } from './validators';
+import e from 'express';
 
 
 const noOp = function(){};
@@ -249,10 +250,15 @@ export default class TxRegionsInput extends Component {
 
     _setSelection() {
         var sel = document.getSelection(),
-            str = this.state.raw.slice(0, this.state.rawCaretPos),
             cleanCaretPos = foldWhitespace(str).length,
-            range = makeSelectionRange(this._elm, cleanCaretPos)
-        console.log('_setSelection', str);
+            range = makeSelectionRange(this._elm, cleanCaretPos);
+        let str = this.state.raw;
+        if (typeof str === 'object') {
+          str = str.raw.slice(0, this.state.rawCaretPos),
+        } else {
+          str =  str.slice(0, this.state.rawCaretPos),
+        }
+
         if (!range) {
             range = document.createRange();
             range.selectNodeContents(this._elm);
