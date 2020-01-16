@@ -23,7 +23,7 @@
     "lint": "eslint src demo",
     "start": "cd demo && node server.js && cd -",
     "test-node": "mocha --compilers js:babel-core/register tests.node.js",
-    "postinstall": "node ./npm-scripts/postinstall.js"
+    "postinstall": "node ./postinstall.js"
   },
   "authors": [
     "Joe Farro"
