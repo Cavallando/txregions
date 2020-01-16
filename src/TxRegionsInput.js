@@ -254,9 +254,9 @@ export default class TxRegionsInput extends Component {
             range = makeSelectionRange(this._elm, cleanCaretPos);
         let str = this.state.raw;
         if (typeof str === 'object') {
-          str = str.raw.slice(0, this.state.rawCaretPos),
+          str = str.raw.slice(0, this.state.rawCaretPos);
         } else {
-          str =  str.slice(0, this.state.rawCaretPos),
+          str =  str.slice(0, this.state.rawCaretPos);
         }
 
         if (!range) {
