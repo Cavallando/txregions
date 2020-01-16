@@ -252,7 +252,7 @@ export default class TxRegionsInput extends Component {
             str = this.state.raw.slice(0, this.state.rawCaretPos),
             cleanCaretPos = foldWhitespace(str).length,
             range = makeSelectionRange(this._elm, cleanCaretPos)
-
+        console.log('_setSelection', str);
         if (!range) {
             range = document.createRange();
             range.selectNodeContents(this._elm);
