@@ -95,8 +95,7 @@ export default class TxRegionsInput extends Component {
             return this._cleanCacheValue;
         }
         this._cleanCacheSrc = this.state.raw;
-        const { raw = '' } = this._cleanCacheSrc;
-        return this._cleanCacheValue = foldWhitespace(raw);
+        return this._cleanCacheValue = foldWhitespace(this._cleanCacheSrc);
     }
 
     get raw() {
@@ -249,14 +248,9 @@ export default class TxRegionsInput extends Component {
 
     _setSelection() {
         var sel = document.getSelection(),
+            str = this.state.raw.slice(0, this.state.rawCaretPos),
             cleanCaretPos = foldWhitespace(str).length,
-            range = makeSelectionRange(this._elm, cleanCaretPos);
-        let str = this.state.raw;
-        if (typeof str === 'object') {
-          str = str.raw.slice(0, this.state.rawCaretPos);
-        } else {
-          str =  str.slice(0, this.state.rawCaretPos);
-        }
+            range = makeSelectionRange(this._elm, cleanCaretPos)
 
         if (!range) {
             range = document.createRange();
@@ -523,7 +517,7 @@ export default class TxRegionsInput extends Component {
                     ref={(elm) => this._input = elm}
                     hidden
                     type="text"
-                    onChange={noOp}
+                    // onChange={noOp}
                     name={typeof p.input === 'string' ? p.input : ''}
                     value={clean.trim()}
                     {...inputProps} />
