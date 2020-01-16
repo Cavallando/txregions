@@ -528,6 +528,7 @@ export default class TxRegionsInput extends Component {
                 ref={elm => this._wrapper = elm}
                 {...wrapperProps}
                 {...violations}
+                className={className}
                 data-ux-state={uxFocus + uxChanged}
             >
                 {input}
@@ -547,6 +548,7 @@ export default class TxRegionsInput extends Component {
 }
 
 TxRegionsInput.propTypes = {
+    className: PropTypes.string,
     defaultValue: PropTypes.string,
     dynamicMarkers: PropTypes.bool,
     input: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
