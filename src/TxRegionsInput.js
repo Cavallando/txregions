@@ -528,7 +528,7 @@ export default class TxRegionsInput extends Component {
                 ref={elm => this._wrapper = elm}
                 {...wrapperProps}
                 {...violations}
-                className={className}
+                className={p.className}
                 data-ux-state={uxFocus + uxChanged}
             >
                 {input}
