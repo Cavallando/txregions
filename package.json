@@ -6,6 +6,7 @@
   "jsnext:main": "es6/index",
   "homepage": "https://github.com/tiffon/txregions",
   "bugs": "https://github.com/tiffon/txregions/issues",
+  "exports": "./lib/index",
   "scripts": {
     "build": "npm run build-cjs && npm run build-es6",
     "build-cjs": "rm -rf lib && babel  ./src -d lib --ignore '__tests__'",
@@ -28,15 +29,15 @@
     "warning": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.2.2",
     "bundle-loader": "^0.5.2",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
